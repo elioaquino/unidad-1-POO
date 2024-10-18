@@ -1,0 +1,42 @@
+@startuml
+
+class Libro{
+   - titulo : String
+   - autor : String
+   - isbn : String
+   _ disponible : boolean
+
+   + Libro(titulo, autor, isbn)
+
+   + prestar()
+   + devolver()
+   + estarDisponible()
+}
+
+class Prestamo{
+   - libro: Libro
+   - fechaPrestamo : Date
+   - fechaDevolucion : Date
+   - estudiante : Estudiante
+
+   + Prestamo(libro, fechaPrestamo, fechaDevolucion)
+
+}
+
+
+class Estudiante{
+   - nombre : String
+   - codigo : String
+   - prestamos : List<Prestamo>
+
+   + Estudiante(nombre, codigo)
+   + solicitarPrestamo(libro: Linro, fechaPrestamo : Date, fechaPrestamo : Date) : Prestamo
+   + get(prestamo() : List<Prestamo>
+
+
+}
+
+
+Estudiante "1" -- "*" Prestamo
+Prestamo "1" -- "1" Libro
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+
+class Persona{
+    + saludar() : void
+
+}
+
+class Estudiante extends Persona{
+    + saludar(nombre : String) : void
+}
+
+@enduml
